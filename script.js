@@ -4,7 +4,7 @@ function closeMenu(){navigation.classList.remove('open');menu.setAttribute('aria
 menu.addEventListener('click',()=>{const open = navigation.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));});
 navigation.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));
 // A dropdown closed on desktop should stay closed when returning to mobile.
-window.matchMedia('(max-width: 1050px)').addEventListener('change',closeMenu);
+window.matchMedia('(max-width: 1100px)').addEventListener('change',closeMenu);
 document.addEventListener('keydown',event=>{if(event.key==='Escape'&&navigation.classList.contains('open')){closeMenu();menu.focus();}});
 document.addEventListener('click',event=>{if(!event.target.closest('.header'))closeMenu();});
 document.querySelectorAll('[data-service]').forEach(link=>link.addEventListener('click',()=>{document.querySelector('#service').value=link.dataset.service;}));
